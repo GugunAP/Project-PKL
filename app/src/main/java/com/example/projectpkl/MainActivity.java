@@ -1,5 +1,6 @@
 package com.example.projectpkl;
 
+import android.content.Intent;
 import android.graphics.Color;
 import android.os.Bundle;
 import android.view.View;
@@ -36,8 +37,11 @@ public class MainActivity extends AppCompatActivity {
             public void onClick(View v) {
                 if (ed1.getText().toString().equals("admin") &&
                         ed2.getText().toString().equals("admin")) {
+                    Intent i;
                     Toast.makeText(getApplicationContext(),
-                            "Redirecting...", Toast.LENGTH_SHORT).show();
+                            i = new Intent(MainActivity.this, HomeActivity.class);
+                    startActivity(i);
+
                 } else {
                     Toast.makeText(getApplicationContext(), "Wrong Credentials", Toast.LENGTH_SHORT).show();
 
