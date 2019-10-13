@@ -37,10 +37,11 @@ public class MainActivity extends AppCompatActivity {
             public void onClick(View v) {
                 if (ed1.getText().toString().equals("admin") &&
                         ed2.getText().toString().equals("admin")) {
-                    Intent i;
-                    Toast.makeText(getApplicationContext(),
-                            i = new Intent(MainActivity.this, HomeActivity.class);
-                    startActivity(i);
+                    Intent moveToDestinationActivity;
+                    Toast.makeText(getApplicationContext(), "Redirecting...", Toast.LENGTH_SHORT).show();
+                    moveToDestinationActivity = new Intent(MainActivity.this, HomeActivity.class);
+                    startActivity(moveToDestinationActivity);
+
 
                 } else {
                     Toast.makeText(getApplicationContext(), "Wrong Credentials", Toast.LENGTH_SHORT).show();
