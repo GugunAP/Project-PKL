@@ -12,53 +12,50 @@ import android.widget.Toast;
 import androidx.appcompat.app.AppCompatActivity;
 
 public class MainActivity extends AppCompatActivity {
-    Button b1, b2;
-    EditText ed1, ed2;
+    Button btnLogin, btnCancel;
+    EditText etName, etPassword;
 
-    TextView tx1;
-    int counter = 3;
-
+    TextView txAttemptsLeft;
+    int loginAttemptsCounter = 3;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        b1 = findViewById(R.id.button);
-        ed1 = findViewById(R.id.editText);
-        ed2 = findViewById(R.id.editText2);
+        btnLogin = findViewById(R.id.activity_main_btn_login);
+        btnCancel = findViewById(R.id.activity_main_btn_cancel);
+        etName = findViewById(R.id.activity_main_et_nama);
+        etPassword = findViewById(R.id.activity_main_et_password);
+        txAttemptsLeft = findViewById(R.id.activity_main_tv_attempts_left);
 
-        b2 = findViewById(R.id.button2);
-        tx1 = findViewById(R.id.textView3);
-        tx1.setVisibility(View.GONE);
+        txAttemptsLeft.setVisibility(View.GONE);
 
-        b1.setOnClickListener(new View.OnClickListener() {
+        btnLogin.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                if (ed1.getText().toString().equals("admin") &&
-                        ed2.getText().toString().equals("admin")) {
+                if (etName.getText().toString().equals("admin") &&
+                    etPassword.getText().toString().equals("admin")) {
                     Intent moveToDestinationActivity;
                     Toast.makeText(getApplicationContext(), "Redirecting...", Toast.LENGTH_SHORT).show();
                     moveToDestinationActivity = new Intent(MainActivity.this, HomeActivity.class);
                     startActivity(moveToDestinationActivity);
-
-
                 } else {
                     Toast.makeText(getApplicationContext(), "Wrong Credentials", Toast.LENGTH_SHORT).show();
 
-                    tx1.setVisibility(View.VISIBLE);
-                    tx1.setBackgroundColor(Color.RED);
-                    counter--;
-                    tx1.setText(Integer.toString(counter));
+                    txAttemptsLeft.setVisibility(View.VISIBLE);
+                    txAttemptsLeft.setBackgroundColor(Color.RED);
+                    loginAttemptsCounter--;
+                    txAttemptsLeft.setText(Integer.toString(loginAttemptsCounter));
 
-                    if (counter == 0) {
-                        b1.setEnabled(false);
+                    if (loginAttemptsCounter == 0) {
+                        btnLogin.setEnabled(false);
                     }
                 }
             }
         });
 
-        b2.setOnClickListener(new View.OnClickListener() {
+        btnCancel.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 finish();

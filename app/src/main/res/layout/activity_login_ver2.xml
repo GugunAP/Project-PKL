@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:font="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <TextView
+        android:id="@+id/textView2"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginTop="24dp"
+        android:layout_marginBottom="37dp"
+        android:fontFamily="sans-serif"
+        android:gravity="center"
+        android:text="LOGIN PAGE"
+        android:textColor="#707070"
+        android:textSize="24dp"
+        font:layout_constraintBottom_toTopOf="@+id/imageView"
+        font:layout_constraintEnd_toEndOf="parent"
+        font:layout_constraintHorizontal_bias="0.0"
+        font:layout_constraintStart_toStartOf="parent"
+        font:layout_constraintTop_toTopOf="parent" />
+
+    <ImageView
+        android:id="@+id/imageView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="474dp"
+        font:layout_constraintBottom_toBottomOf="parent"
+        font:layout_constraintEnd_toEndOf="parent"
+        font:layout_constraintStart_toStartOf="parent"
+        font:layout_constraintTop_toBottomOf="@+id/textView2"
+        font:srcCompat="@drawable/logoupnbaru" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
